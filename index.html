@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Schulte Grid</title>
+  <meta name="description" content="A minimal Schulte grid attention game. 极简舒尔特方格。">
+  <meta name="color-scheme" content="light dark">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='3' fill='%231d1d1f'/%3E%3Cpath d='M5.3 5.3h5.4v5.4H5.3z' fill='none' stroke='%23fff' stroke-width='1.2'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+  <script>
+    // Apply the saved theme before first paint to avoid a flash.
+    try {
+      var t = localStorage.getItem('schulte.theme');
+      if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t;
+    } catch (e) {}
+  </script>
+</head>
+<body>
+  <header class="bar">
+    <span class="brand" data-i18n="title">Schulte Grid</span>
+    <div class="tools">
+      <button id="lang" class="link" type="button" aria-label="Language">中文</button>
+      <button id="theme" class="link" type="button" aria-label="Toggle theme"></button>
+    </div>
+  </header>
+
+  <main>
+    <div class="sizes" role="radiogroup" aria-label="Grid size">
+      <button type="button" data-size="3">3×3</button>
+      <button type="button" data-size="4">4×4</button>
+      <button type="button" data-size="5">5×5</button>
+      <button type="button" data-size="6">6×6</button>
+      <button type="button" data-size="7">7×7</button>
+    </div>
+
+    <div class="status">
+      <div>
+        <span class="label" data-i18n="next">Next</span>
+        <span id="next" class="value">1</span>
+      </div>
+      <div>
+        <span class="label" data-i18n="time">Time</span>
+        <span id="time" class="value mono">0.00</span>
+      </div>
+      <div>
+        <span class="label" data-i18n="best">Best</span>
+        <span id="best" class="value mono">—</span>
+      </div>
+    </div>
+
+    <div id="grid" class="grid" aria-live="off"></div>
+
+    <p id="hint" class="hint" data-i18n="hint">Tap 1 to start. Find the numbers in order.</p>
+
+    <div class="actions">
+      <button id="reset" class="btn" type="button" data-i18n="reset">Reset</button>
+    </div>
+
+    <section class="records" aria-labelledby="rec-title">
+      <div class="records-head">
+        <h2 id="rec-title" data-i18n="records">Records</h2>
+        <button id="clear" class="link small" type="button" data-i18n="clear">Clear</button>
+      </div>
+      <ol id="history" class="history"></ol>
+      <p id="empty" class="muted small" data-i18n="empty">No records for this size yet.</p>
+      <p class="muted small" data-i18n="local">Records are saved only in this browser.</p>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <a href="https://github.com/AlbertHX86/schulte-grid" target="_blank" rel="noopener">GitHub</a>
+    <span aria-hidden="true">·</span>
+    <a href="https://alberthx86.github.io/" target="_blank" rel="noopener" data-i18n="home">Xiao Huang</a>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
