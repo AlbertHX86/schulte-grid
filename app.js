@@ -206,7 +206,6 @@
 
   function renderText() {
     document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
-    document.title = t('title');
     document.querySelectorAll('[data-i18n]').forEach(function (el) {
       el.textContent = t(el.dataset.i18n);
     });
