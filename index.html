@@ -20,7 +20,14 @@
   <header class="bar">
     <span class="brand" data-i18n="title">Schulte Grid</span>
     <div class="tools">
-      <button id="lang" class="link" type="button" aria-label="Language">中文</button>
+      <label class="lang">
+        <span class="sr-only">语言 / Language</span>
+        <select id="lang" aria-label="语言 / Language">
+          <option value="" disabled selected hidden>语言 / Language</option>
+          <option value="en">English</option>
+          <option value="zh">中文</option>
+        </select>
+      </label>
       <button id="theme" class="link" type="button" aria-label="Toggle theme"></button>
     </div>
   </header>
@@ -66,12 +73,54 @@
       <p id="empty" class="muted small" data-i18n="empty">No records for this size yet.</p>
       <p class="muted small" data-i18n="local">Records are saved only in this browser.</p>
     </section>
+
+    <details class="lit">
+      <summary data-i18n="lit">Research: Schulte grids and the prefrontal cortex</summary>
+
+      <div class="en-only">
+        <p>The Schulte table is a classic visual search test of attention. Keeping attention on a goal, holding the next target in mind and ignoring distractors depend on the prefrontal cortex working together with parietal attention areas [1, 2].</p>
+        <p><b>What studies saw during the task</b></p>
+        <ul>
+          <li>EEG in 10 children (7–8 years) and 10 adults (18–20 years) doing a 5×5 table: adults showed more frontal beta power towards the end of the task, which the authors read as top-down cognitive control; children instead showed more parietal alpha power [3].</li>
+          <li>ERPs in 27 children (8–11 years) with a black–red grid: the type of search changed N3 latency at frontal sites (Fp2, FC2, FCz). The red colour distracted only when one target was searched for, not three [4].</li>
+          <li>An EEG neurofeedback study in young adults used Schulte completion time as its attention measure; times fell after three training sessions [5].</li>
+        </ul>
+        <p><b>What this does not show</b></p>
+        <p>These studies show that the task engages frontal control while you do it. None tested whether practising Schulte grids changes or repairs the prefrontal cortex. Samples are small and none is a randomised controlled trial of Schulte training. More broadly, brain training reliably improves the trained task, but evidence that it transfers to other tasks or daily life is weak [6]; for ADHD, cognitive training effects largely disappear when raters are blinded [7]. Treat this game as a focus exercise, not a treatment.</p>
+      </div>
+
+      <div class="zh-only">
+        <p>舒尔特方格是经典的视觉搜索注意力测试。把注意力保持在目标上、记住下一个要找的数字、忽略干扰，这些能力依赖前额叶皮层与顶叶注意区域的协同工作 [1, 2]。</p>
+        <p><b>研究在做题过程中观察到了什么</b></p>
+        <ul>
+          <li>对 10 名儿童（7–8 岁）和 10 名成人（18–20 岁）完成 5×5 方格时的脑电：成人在任务后段额区 beta 功率升高，作者解释为自上而下的认知控制；儿童则表现为顶区 alpha 功率升高 [3]。</li>
+          <li>对 27 名儿童（8–11 岁）使用黑红双色方格的事件相关电位研究：搜索类型改变了额区电极（Fp2、FC2、FCz）的 N3 潜伏期；红色只在搜索单个目标时造成干扰，搜索三个目标时没有 [4]。</li>
+          <li>一项针对青年人的脑电神经反馈训练研究以舒尔特方格完成时间作为注意力指标，三次训练后用时缩短 [5]。</li>
+        </ul>
+        <p><b>这些研究不能说明什么</b></p>
+        <p>这些研究说明，做舒尔特方格时额叶的控制活动会参与其中；但没有一项研究检验过练习舒尔特方格能否改变或修复前额叶。样本量都很小，也没有针对舒尔特训练的随机对照试验。更广泛地看，脑力训练能可靠地提高被训练任务本身的成绩，但迁移到其他任务或日常生活的证据很弱 [6]；在 ADHD 中，认知训练的效果在评估者设盲后基本消失 [7]。请把这个游戏当作专注练习，而不是治疗手段。</p>
+      </div>
+
+      <p class="refs-title" data-i18n="refs">References</p>
+      <ol class="refs">
+        <li>Miller EK, Cohen JD. An integrative theory of prefrontal cortex function. <i>Annual Review of Neuroscience</i>. 2001;24:167–202. <a href="https://doi.org/10.1146/annurev.neuro.24.1.167" target="_blank" rel="noopener">doi:10.1146/annurev.neuro.24.1.167</a></li>
+        <li>Corbetta M, Shulman GL. Control of goal-directed and stimulus-driven attention in the brain. <i>Nature Reviews Neuroscience</i>. 2002;3(3):201–215. <a href="https://doi.org/10.1038/nrn755" target="_blank" rel="noopener">doi:10.1038/nrn755</a></li>
+        <li>Khramova MV, Kuc AK, Maksimenko VA, et al. Monitoring the cortical activity of children and adults during cognitive task completion. <i>Sensors</i>. 2021;21(18):6021. <a href="https://doi.org/10.3390/s21186021" target="_blank" rel="noopener">doi:10.3390/s21186021</a></li>
+        <li>Lu A, Wang D, He S, et al. Attention mechanisms underlying dual-color digital visual search based on Schulte grid: An event-related potential study. <i>Brain and Behavior</i>. 2022;12(2):e2471. <a href="https://doi.org/10.1002/brb3.2471" target="_blank" rel="noopener">doi:10.1002/brb3.2471</a></li>
+        <li>Wang B, Xu Z, Luo T, Pan J. EEG-based closed-loop neurofeedback for attention monitoring and training in young adults. <i>Journal of Healthcare Engineering</i>. 2021;2021:5535810. <a href="https://doi.org/10.1155/2021/5535810" target="_blank" rel="noopener">doi:10.1155/2021/5535810</a></li>
+        <li>Simons DJ, Boot WR, Charness N, et al. Do “brain-training” programs work? <i>Psychological Science in the Public Interest</i>. 2016;17(3):103–186. <a href="https://doi.org/10.1177/1529100616661983" target="_blank" rel="noopener">doi:10.1177/1529100616661983</a></li>
+        <li>Cortese S, Ferrin M, Brandeis D, et al. Cognitive training for attention-deficit/hyperactivity disorder: meta-analysis of clinical and neuropsychological outcomes from randomized controlled trials. <i>Journal of the American Academy of Child &amp; Adolescent Psychiatry</i>. 2015;54(3):164–174. <a href="https://doi.org/10.1016/j.jaac.2014.12.010" target="_blank" rel="noopener">doi:10.1016/j.jaac.2014.12.010</a></li>
+      </ol>
+    </details>
   </main>
 
   <footer class="foot">
-    <a href="https://github.com/AlbertHX86/schulte-grid" target="_blank" rel="noopener">GitHub</a>
-    <span aria-hidden="true">·</span>
-    <a href="https://alberthx86.github.io/" target="_blank" rel="noopener" data-i18n="home">Xiao Huang</a>
+    <p>
+      <a href="https://github.com/AlbertHX86/schulte-grid" target="_blank" rel="noopener">GitHub</a>
+      <span aria-hidden="true">·</span>
+      <a href="https://alberthx86.github.io/" target="_blank" rel="noopener">Albert Huang</a>
+    </p>
+    <p data-i18n="copyright">© 2026 Albert Huang. Released under the MIT License.</p>
   </footer>
 
   <script src="app.js"></script>
