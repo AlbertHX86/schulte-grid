@@ -18,8 +18,9 @@
       confirmClear: 'Clear all records for {n}×{n}?',
       light: 'Light',
       dark: 'Dark',
-      other: '中文',
-      home: 'Xiao Huang'
+      copyright: '© 2026 Albert Huang. Released under the MIT License.',
+      lit: 'Research: Schulte grids and the prefrontal cortex',
+      refs: 'References'
     },
     zh: {
       title: '舒尔特方格',
@@ -37,8 +38,9 @@
       confirmClear: '清空 {n}×{n} 的所有记录？',
       light: '亮色',
       dark: '暗色',
-      other: 'English',
-      home: '黄骁'
+      copyright: '© 2026 Albert Huang. 以 MIT 许可证开源。',
+      lit: '文献：舒尔特方格与前额叶',
+      refs: '参考文献'
     }
   };
 
@@ -210,7 +212,12 @@
     document.querySelectorAll('[data-i18n]').forEach(function (el) {
       el.textContent = t(el.dataset.i18n);
     });
-    $('lang').textContent = t('other');
+    // The menu always reads "语言 / Language"; the current choice gets a check mark.
+    var sel = $('lang');
+    Array.prototype.forEach.call(sel.options, function (o) {
+      if (o.value) o.textContent = (o.value === lang ? '✓ ' : '\u2003') + (o.value === 'zh' ? '中文' : 'English');
+    });
+    sel.selectedIndex = 0;
     // The button names the theme you switch to.
     $('theme').textContent = currentTheme() === 'dark' ? t('light') : t('dark');
     if (finished) hintEl.textContent = t(winKey, { t: timeEl.textContent });
@@ -241,8 +248,8 @@
     renderRecords();
   });
 
-  $('lang').addEventListener('click', function () {
-    lang = lang === 'zh' ? 'en' : 'zh';
+  $('lang').addEventListener('change', function (e) {
+    lang = e.target.value === 'zh' ? 'zh' : 'en';
     store.set('lang', lang);
     renderText();
     renderRecords();
