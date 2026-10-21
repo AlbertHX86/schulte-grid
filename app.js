@@ -21,7 +21,8 @@
       copyright: '© 2026 Albert Huang. Released under the MIT License.',
       lit: 'Research: Schulte grids and the prefrontal cortex',
       refs: 'References',
-      other: 'Sudoku'
+      other: 'Sudoku',
+      gomoku: 'Gomoku'
     },
     zh: {
       title: '舒尔特方格',
@@ -42,7 +43,8 @@
       copyright: '© 2026 Albert Huang. 以 MIT 许可证开源。',
       lit: '文献：舒尔特方格与前额叶',
       refs: '参考文献',
-      other: '数独'
+      other: '数独',
+      gomoku: '五子棋'
     }
   };
 
